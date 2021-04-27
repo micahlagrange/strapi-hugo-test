@@ -9,5 +9,5 @@ themesDir = "../themes/"
   staticurl = "https://dev-static-strapi.bigfunbrewing.com"
 
 [caches.getjson]
-  dir = "/var/.cache/hugocorporate"
+  dir = "/home/ubuntu/.cache/hugocorporate"
   maxAge = 1
