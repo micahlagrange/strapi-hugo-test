@@ -7,3 +7,7 @@ themesDir = "../themes/"
 [params]
   strapiapi = "https://strapi.bigfunbrewing.com"
   staticurl = "https://dev-static-strapi.bigfunbrewing.com"
+
+[caches.getjson]
+  dir = ":cacheDir/:project"
+  maxAge = -1
