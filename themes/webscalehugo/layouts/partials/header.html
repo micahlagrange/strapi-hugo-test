@@ -22,19 +22,23 @@
 
           <!-- Dropdown Structure -->
           <ul id='dropdown{{ $comp.id }}' class='dropdown-content top-dropdown'>
+            <!-- each section in dropdown -->
             {{ range $_, $section := $comp.sections }}
               <div class="menu-pad">
               {{ $sect := getJSON $.Site.Params.Strapiapi "/sections/" $section.id }}
               <li class="divider" tabindex="-1"></li>
               <li>{{$comp.label}}</li>
               {{ if $sect.displayname }}
-              {{- if $sect.icon }}
-                <span class="menu-icon">
-                  <img src="{{ $.Site.Params.staticurl }}{{ $sect.icon.url }}" class="display-img">
-                </span>
-              {{ end -}}
-              <li id="section-{{ $sect.name }}">{{ $sect.displayname }}</li>
+              <li id="section-{{ $sect.name }}">
+                {{- if $sect.icon }}
+                  <span class="menu-icon">
+                    <img src="{{ $.Site.Params.staticurl }}{{ $sect.icon.url }}" class="display-img">
+                  </span>
+                {{ end -}}
+              {{ $sect.displayname }}
+              </li>
               {{ end }}
+              <!--  each link in section -->
               {{ range $idx, $link := $sect.links }}
                 <li><a href="{{ $link.url }}">
                   {{- if $link.icon }}
