@@ -9,15 +9,31 @@
     <!-- use the data for the menu items -->
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       {{ range $_, $comp := $data.body }}
-      <!-- <li><a href="/why-webscale/">WHY WEBSCALE</a></li>
-      <li><a href="/products/">PRODUCTS</a></li>
+      <!--
+      <li><a href="/why-webscale/">WHY WEBSCALE</a></li>
       <li><a href="/partners/">PARTNERS</a></li>
       <li><a href="/about-us/">ABOUT US</a></li>
-      <li ><a href="/demo/">Request A Demo</a></li> -->
+      -->
       <li {{ if $comp.is_button }} class="ws-menu-btn" {{ end -}}>
         {{ if eq $comp.__component "menu.link" -}}
         <a href="{{ $comp.url }}">{{ $comp.label }}</a>
         {{- else if eq $comp.__component "menu.dropdown" -}}
+          <!-- Dropdown Trigger -->
+          <a class='dropdown-trigger' href='#' data-target='dropdown{{ $comp.id }}'>{{ $comp.label }}</a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown{{ $comp.id }}' class='dropdown-content'>
+            {{ range $_, $section := $comp.sections }}
+              {{ $sect := getJSON $.Site.Params.Strapiapi "/sections/" $section.id }}
+              <li class="divider" tabindex="-1"></li>
+              <li>{{$comp.label}}</li>
+              <li>{{ $sect.name }}</li>
+              {{ range $idx, $link := $sect.links }}
+                <li><a href="{{ $link.url }}">{{ $link.label }}</a></li>
+              {{ end}}
+              <li class="divider" tabindex="-1"></li>
+            {{ end }}
+          </ul>
         {{ end }}
       </li>
       {{ end }}

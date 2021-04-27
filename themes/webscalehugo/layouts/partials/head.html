@@ -7,59 +7,58 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {hover: true, constrainWidth: false});
+  });
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
-
+  });
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.parallax');
     var instances = M.Parallax.init(elems);
   });
 </script>
 
 <style>
-
-body {
-  font-family: Open Sans,Arial,sans-serif;
-}
-
-.nav-wrapper .brand-logo img  {
-  height: 64px;
-}
-
-.ws-menu-btn {
-  background-color: #E37222;
-  text-align: center;
-  border-radius: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  max-height: 56px;
-}
-
-nav {
-  background: transparent;
-    background-color: black;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: none;
-    background-size: auto;
-    background-origin: padding-box;
-    background-clip: border-box;
-}
-
-.hero {
-  color: white;
-}
-.hero h1 {
-  font-size: 3em;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.hero h4 {
-  font-weight: 300;
-  font-size: 1.5em;
-  line-height: 1.4;
-  padding-bottom: 10px;
-}
+  body {
+    font-family: Open Sans,Arial,sans-serif;
+  }
+  .nav-wrapper .brand-logo img  {
+    height: 64px;
+  }
+  .ws-menu-btn {
+    background-color: #E37222;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    max-height: 56px;
+  }
+  nav {
+    background: transparent;
+      background-color: rgb(26, 25, 39);
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-image: none;
+      background-size: auto;
+      background-origin: padding-box;
+      background-clip: border-box;
+  }
+  .hero {
+    color: white;
+  }
+  .hero h1 {
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .hero h4 {
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.4;
+    padding-bottom: 10px;
+  }
 </style>
