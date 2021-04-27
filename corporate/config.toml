@@ -1,0 +1,9 @@
+baseURL = "http://www.webscale.com/"
+languageCode = "en-us"
+title = "The Safest Cloud Hosting for Ecommerce"
+theme = "webscalehugo"
+themesDir = "../themes/"
+
+[params]
+  strapiapi = "https://strapi.bigfunbrewing.com"
+  staticurl = "https://dev-static-strapi.bigfunbrewing.com"

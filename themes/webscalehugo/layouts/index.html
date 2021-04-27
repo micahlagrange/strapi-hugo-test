@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <main aria-role="main">
+      <div class="parallax-container">
+        <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerTop }}"></div>
+        <!-- <header class="homepage-header"> -->
+          <!-- <header class="homepage-header hero"> -->
+            <div class="hero center">
+              <h1>{{.Params.herotext}}</h1>
+              <h4>{{.Params.herosubtext}}</h4>
+            </div>
+          <!-- </header>   -->
+        <!-- </header> -->
+        </div>
+      <div class="section white homepage-content">
+        <div class="row container">
+          <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+          {{.Content}}
+        </div>
+      </div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerBottom }}"></div>
+      </div>
+{{ end }}

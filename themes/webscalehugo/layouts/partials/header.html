@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper">
+    <!-- get the data -->
+    {{ $data := getJSON $.Site.Params.Strapiapi "/topbar" }}
+    <!-- use the data -->
+    {{ with $data.logo }}
+    <a href="/" class="brand-logo left"><img src="{{ $.Site.Params.staticurl }}{{ .url }}" title="{{ .name }}"></a>
+    {{ end }}
+    <!-- use the data for the menu items -->
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{ range $_, $comp := $data.body }}
+      <!-- <li><a href="/why-webscale/">WHY WEBSCALE</a></li>
+      <li><a href="/products/">PRODUCTS</a></li>
+      <li><a href="/partners/">PARTNERS</a></li>
+      <li><a href="/about-us/">ABOUT US</a></li>
+      <li ><a href="/demo/">Request A Demo</a></li> -->
+      <li {{ if $comp.is_button }} class="ws-menu-btn" {{ end -}}>
+        {{ if eq $comp.__component "menu.link" -}}
+        <a href="{{ $comp.url }}">{{ $comp.label }}</a>
+        {{- else if eq $comp.__component "menu.dropdown" -}}
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>
