@@ -8,7 +8,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, {hover: true, constrainWidth: false});
+    var instances = M.Dropdown.init(elems, {hover: true, constrainWidth: false, alignment: 'top'});
   });
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -29,23 +29,24 @@
   }
   .ws-menu-btn {
     background-color: #E37222;
-    text-align: center;
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-    max-height: 56px;
+    max-height: 40px;
   }
   nav {
-    background: transparent;
-      background-color: rgb(26, 25, 39);
-      background-position-x: 0%;
-      background-position-y: 0%;
-      background-repeat: repeat;
-      background-attachment: scroll;
-      background-image: none;
-      background-size: auto;
-      background-origin: padding-box;
-      background-clip: border-box;
+    padding-right: 10em;
+    padding-left: 10em;
+    background: rgba(44,11,00,1);
+    background-color: rgba(44, 11, 00, 1);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
   }
   .hero {
     color: white;
@@ -61,4 +62,22 @@
     line-height: 1.4;
     padding-bottom: 10px;
   }
+  .top-dropdown {
+    width: 300px !important;
+  }
+  .top-dropdown .menu-icon {
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .top-dropdown span { 
+    vertical-align: middle;
+  }
+  .menu-pad {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  
 </style>
