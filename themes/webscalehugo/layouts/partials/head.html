@@ -18,6 +18,36 @@
     var elems = document.querySelectorAll('.parallax');
     var instances = M.Parallax.init(elems);
   });
+  // When the user scrolls the page, execute navBarColorChange
+  window.onscroll = function() {navBarColorChange()};
+  
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function navBarColorChange() {
+    // Get the navbar
+    var navbar = document.getElementById("ws-nav");
+
+    // Get the offset position of the navbar
+    var y = window.scrollY
+
+    // Get the logo image
+    var topbarLogo = document.getElementById("ws-topbar-logo")
+
+    var whiteLogo = "https://dev-static-strapi.bigfunbrewing.com/uploads/webscale_white_logo_d7ad08c50f.svg"
+    var colorLogo = "https://dev-static-strapi.bigfunbrewing.com/uploads/webscale_logo_2dfd136d29.svg"
+    if (y >= 80) {
+      if(topbarLogo.src != colorLogo){
+        topbarLogo.src = colorLogo
+      }
+      navbar.classList.add("solidnav")
+      navbar.classList.remove("transparentnav");
+    } else {
+      if(topbarLogo.src != whiteLogo){
+        topbarLogo.src = whiteLogo
+      }
+      navbar.classList.remove("solidnav")
+      navbar.classList.add("transparentnav");
+    }
+  } 
 </script>
 
 <style>
@@ -48,7 +78,10 @@
   .nav-wrapper .brand-logo img  {
     height: 64px;
   }
-  nav {
+  #ws-nav {
+    z-index: 9999 !important;
+  }
+  .transparentnav {
     padding-right: 10em;
     padding-left: 10em;
     background-color: rgb(41, 11, 0);
@@ -59,7 +92,28 @@
     background-image: none;
     background-size: auto;
     background-origin: padding-box;
-    background-clip: border-box;
+    background-clip: border-box;    
+  }
+  .solidnav a {
+    color: black;
+  }
+  .solidnav {
+    padding-right: 10em;
+    padding-left: 10em;
+    background-color: rgba(255, 255, 255, 1);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;    
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   .hero {
     padding-top: 5em;
