@@ -1,28 +1,27 @@
 {{ define "main" }}
-    <main aria-role="main">
-      <div class="parallax-container">
-        <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerTop }}"></div>
-        <!-- <header class="homepage-header"> -->
-          <!-- <header class="homepage-header hero"> -->
-            <div class="hero center">
-              <h1>{{.Params.herotext}}</h1>
-              <h4>{{.Params.herosubtext}}</h4>
-            </div>
-          <!-- </header>   -->
-        <!-- </header> -->
+  <div class="parallax-container">
+    <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerTop }}"></div>
+    <!-- <header class="homepage-header"> -->
+      <!-- <header class="homepage-header hero"> -->
+        <div class="hero center">
+          <h1>{{.Params.herotext}}</h1>
+          <h4>{{.Params.herosubtext}}</h4>
         </div>
-      <div class="section ws-grey homepage-content">
-        <div class="row container">
-          <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-          {{.Content}}
-          <br>
-          <br>
-          <div class="center-align">
-            <div class="ws-menu-btn ws-green waves-effect waves-light btn"><a href="#">REQUEST A DEMO</a></div>
-          </div>
-        </div>
+      <!-- </header>   -->
+    <!-- </header> -->
+    </div>
+  <div class="section ws-grey homepage-content">
+    <div class="row container">
+      <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+      {{.Content}}
+      <br>
+      <br>
+      <div class="center-align">
+        <div class="ws-menu-btn ws-green waves-effect waves-light btn"><a href="#">REQUEST A DEMO</a></div>
       </div>
-      <div class="parallax-container">
-        <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerBottom }}"></div>
-      </div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="{{ $.Site.Params.staticurl }}{{ .Params.bannerBottom }}"></div>
+  </div>
 {{ end }}
