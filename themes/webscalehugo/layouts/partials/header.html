@@ -13,7 +13,7 @@
       <li><a href="/partners/">PARTNERS</a></li>
       <li><a href="/about-us/">ABOUT US</a></li>
       -->
-      <li {{ if $comp.is_button }} class="ws-menu-btn waves-effect waves-light btn" {{ end -}}>
+      <li {{ if $comp.is_button }} class="ws-menu-btn ws-orange waves-effect waves-light btn" {{ end -}}>
         {{ if eq $comp.__component "menu.link" -}}
         <a href="{{ $comp.url }}">{{ $comp.label }}</a>
         {{- else if eq $comp.__component "menu.dropdown" -}}
