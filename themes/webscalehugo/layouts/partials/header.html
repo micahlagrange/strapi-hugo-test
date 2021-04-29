@@ -4,7 +4,7 @@
     {{ $data := getJSON $.Site.Params.Strapiapi "/topbar" }}
     <!-- use the data -->
     {{ with $data.logo }}
-    <a href="/" class="left brand-logo"><img id="ws-topbar-logo" src="{{ $.Site.Params.staticurl }}{{ .url }}" title="{{ .name }}"></a>
+    <a href="/" class="left brand-logo"><img id="ws-topbar-logo" src="{{ $.Site.Params.staticurl }}{{ .url }}" title="{{ .name }}" width="109" height="64"></a>
     {{ end }}
     <!-- use the data for the menu items -->
     <ul id="nav-mobile" class="valign-wrapper right hide-on-med-and-down">
