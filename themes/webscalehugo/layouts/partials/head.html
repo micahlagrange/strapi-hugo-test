@@ -145,6 +145,11 @@
     line-height: 1.4;
     padding-bottom: 10px;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
   .bannerlogos {
     padding-top: 10em;
     text-align: center;
@@ -152,11 +157,8 @@
     max-width: 1080px;
   }
   .bannerimg img {
-    max-width: 100%;
-    height: auto;
     position: relative;
     line-height: 0%;
-    width: 10em;
   }
   .top-dropdown {
     width: 300px !important;

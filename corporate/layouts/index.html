@@ -10,7 +10,7 @@
           <div class="bannerlogos row">
             {{ range $_,$blogo := $bannerlogos.bannerlogos }}
             <div class="bannerimg col s2">
-              <img src="{{ $.Site.Params.staticurl }}{{ $blogo.image.url }}">
+              <img src="{{ $.Site.Params.staticurl }}{{ $blogo.image.url }}" alt="" width="200" height="100" loading="lazy">
             </div>
             {{ end }}
           </div>
