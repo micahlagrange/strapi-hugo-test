@@ -1,7 +1,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- fonts -->
-<link rel="stylesheet" id="divi-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext&amp;display=swap" type="text/css" media="all">
+<!--  -->
+<!-- connect to domain of font files -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- optionally increase loading priority -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap">
+<!-- async CSS -->
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap">
+<!-- no-JS fallback -->
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap">
+</noscript>
+
+<!-- materialcss/js -->
+<!--  -->
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
