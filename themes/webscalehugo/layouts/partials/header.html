@@ -18,7 +18,7 @@
         <a href="{{ $comp.url }}">{{ $comp.label }}</a>
         {{- else if eq $comp.__component "menu.dropdown" -}}
           <!-- Dropdown Trigger -->
-          <a class='dropdown-trigger' href='#' data-target='dropdown{{ $comp.id }}'>{{ $comp.label }}</a>
+          <a class='dropdown-trigger' href='{{ $comp.url }}' data-target='dropdown{{ $comp.id }}'>{{ $comp.label }}</a>
 
           <!-- Dropdown Structure -->
           <ul id='dropdown{{ $comp.id }}' class='dropdown-content top-dropdown'>
@@ -27,15 +27,17 @@
               <div class="menu-pad">
               {{ $sect := getJSON $.Site.Params.Strapiapi "/sections/" $section.id }}
               <li class="divider" tabindex="-1"></li>
-              <li>{{$comp.label}}</li>
+              <li><a href="{{ $comp.url }}">{{ $comp.label }}</a></li>
               {{ if $sect.displayname }}
               <li id="section-{{ $sect.name }}">
+                <a href="{{ $sect.url }}">
                 {{- if $sect.icon }}
                   <span class="menu-icon">
-                    <img src="{{ $.Site.Params.staticurl }}{{ $sect.icon.url }}" class="display-img">
+                    <img src="{{ $.Site.Params.staticurl }}{{ $sect.icon.url }}" class="display-img" height="30" width="30">
                   </span>
                 {{ end -}}
-              {{ $sect.displayname }}
+                {{ $sect.displayname }}
+                </a>
               </li>
               {{ end }}
               <!--  each link in section -->
@@ -43,7 +45,7 @@
                 <li><a href="{{ $link.url }}">
                   {{- if $link.icon }}
                     <span class="menu-icon">
-                      <img src="{{ $.Site.Params.staticurl }}{{ $link.icon.url }}" class="display-img">
+                      <img src="{{ $.Site.Params.staticurl }}{{ $link.icon.url }}" class="display-img" height="30" width="30">
                     </span>
                   {{ end -}}
                   <span>{{- $link.label -}}</span>
